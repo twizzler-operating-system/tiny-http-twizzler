@@ -68,7 +68,7 @@ impl Engine {
             fn check_tracking(tracking: &mut Vec<(SocketHandle, u16)>) {
                 let mut core = ENGINE.core.lock().unwrap();
                 let removed = tracking
-                    .extract_if(|item| {
+                    .extract_if(.., |item: &mut (SocketHandle, u16)| {
                         let socket = core.get_mutable_socket(item.0);
                         if socket.state() == State::Closed {
                             log::debug!("tracked tcp socket {} in closed state", item.0);

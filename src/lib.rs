@@ -91,7 +91,7 @@
 //! let _ = request.respond(response);
 //! ```
 // #![forbid(unsafe_code)]
-#![feature(extract_if)]
+// extract_if is now stable
 #![deny(rust_2018_idioms)]
 #![allow(clippy::match_like_matches_macro)]
 
